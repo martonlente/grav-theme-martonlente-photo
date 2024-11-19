@@ -1,0 +1,15 @@
+# ignore node dependency directories
+node_modules/
+
+# ignore fonts directory
+fonts/
+
+# ignore image files
+*.gif
+*.jpg
+*.png
+*.svg
+
+# track these files, if they exist
+!.gitattributes
+!.gitignore
