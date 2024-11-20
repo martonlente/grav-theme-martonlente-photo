@@ -2,7 +2,7 @@
 
 
 {% block content %}
-  <div class="container pe-4 ps-4">
+  <section class="container pe-4 ps-4">
     <ul class="js-isotope-grid list-style-none">
       {% for img in page.media.images %}
         <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
@@ -22,5 +22,5 @@
         </li>
       {% endfor %}
     </ul>
-  </div>
+  </section>
 {% endblock %}

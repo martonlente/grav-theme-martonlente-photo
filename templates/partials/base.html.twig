@@ -33,27 +33,22 @@
 <body id="top" class="{{ page.header.body_classes|e }}">
 
 {% block header %}
-  <div class="header">
-    <div class="wrapper padding">
-      <a class="logo left" href="{{ home_url|e }}">
-        <i class="fa fa-rebel"></i>
-        {{ config.site.title|e }}
-      </a>
+  {# TODO: add header #}
+  <header>
+    <a href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+
+    {# 
       {% block header_navigation %}
-      <nav class="main-nav">
-        {% include 'partials/navigation.html.twig' %}
-      </nav>
+        <nav>
+          {% include 'partials/navigation.html.twig' %}
+        </nav>
       {% endblock %}
-    </div>
-  </div>
+    #}
+  </header>
 {% endblock %}
 
 {% block body %}
-  <section id="body">
-    <div class="wrapper padding">
-    {% block content %}{% endblock %}
-    </div>
-  </section>
+  {% block content %}{% endblock %}
 {% endblock %}
 
 {% block footer %}
