@@ -2,24 +2,42 @@
 
 
 {% block content %}
-  <section class="container pe-4 ps-4">
+  <section class="container pb-4 pt-4">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-12">
+        {# TODO: add content raw #}
+        <p class="fs-1 lh-lg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit tristique maximus. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit. Phasellus sem dui, hendrerit vel nulla nec, vulputate faucibus justo.
+          Vivamus eu tincidunt metus. Aliquam erat volutpat. Donec blandit leo et tellus interdum viverra. Vestibulum sed
+          nisi a turpis ornare placerat. Vestibulum metus mauris, commodo ut sollicitudin iaculis, pharetra et odio. Cras
+          sit amet massa id mauris tristique malesuada nec a nisl. Integer id viverra felis. Cras vulputate nibh sed
+          commodo blandit.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container">
     <ul class="js-isotope-grid list-style-none">
       {% for img in page.media.images %}
-        <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
-          <figure>
-            <img alt="alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100" src="{{ img.url|e }}">
+      <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
+        <figure>
+          <img alt="alt=" {% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100"
+            src="{{ img.url|e }}">
 
-            {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
-              {# TODO: check image.meta.date to img.meta.date conversion issues #}
-              {% set date_txt = image.meta.date %}
-              {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
+          {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
+          {# TODO: check image.meta.date to img.meta.date conversion issues #}
+          {% set date_txt = image.meta.date %}
+          {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
 
-              <figcaption class="fs-7 mt-1">
-                <span class="grey-50 text-nowrap">{{ date_formatted }}  –</span> <span class="text-nowrap">{{ img.meta.alt_txt|e }} –</span> <span class="text-nowrap">{{ img.meta.location|e }}</span>
-              </figcaption>
-            {% endif %}
-          </figure>
-        </li>
+          <figcaption class="fs-7 mt-1">
+            <span class="grey-50 text-nowrap">{{ date_formatted }} –</span> <span class="text-nowrap">{{
+              img.meta.alt_txt|e }} –</span> <span class="text-nowrap">{{ img.meta.location|e }}</span>
+          </figcaption>
+          {% endif %}
+        </figure>
+      </li>
       {% endfor %}
     </ul>
   </section>
