@@ -14,7 +14,7 @@
               {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
 
               <figcaption>
-                <span class="grey-50 text-nowrap">{{ img.meta.alt_txt|e }}</span> – <span class="text-nowrap">{{ img.meta.alt_txt|e }}</span> –  <span class="text-nowrap">{{ img.meta.location|e }}</span>
+                <span class="grey-50 text-nowrap">{{ date_formatted }}</span> – <span class="text-nowrap">{{ img.meta.alt_txt|e }}</span> –  <span class="text-nowrap">{{ img.meta.location|e }}</span>
               </figcaption>
             {% endif %}
           </figure>
