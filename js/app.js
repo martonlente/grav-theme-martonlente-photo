@@ -31,7 +31,7 @@
 
     var iso = new Isotope(isotopeGrid, {
       itemSelector: '.js-isotope-grid-item',
-      layoutMode: 'fitRows'
+      layoutMode: 'masonry'
     });  
   }
 
