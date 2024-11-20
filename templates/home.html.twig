@@ -6,15 +6,9 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-12">
-        {# TODO: add content raw #}
-        <p class="fs-1 lh-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit tristique maximus. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Phasellus sem dui, hendrerit vel nulla nec, vulputate faucibus justo.
-          Vivamus eu tincidunt metus. Aliquam erat volutpat. Donec blandit leo et tellus interdum viverra. Vestibulum sed
-          nisi a turpis ornare placerat. Vestibulum metus mauris, commodo ut sollicitudin iaculis, pharetra et odio. Cras
-          sit amet massa id mauris tristique malesuada nec a nisl. Integer id viverra felis. Cras vulputate nibh sed
-          commodo blandit.
-        </p>
+        <div class="fs-1 lh-lg">
+          {{ page.content|raw }}
+        </div>
       </div>
     </div>
   </section>
