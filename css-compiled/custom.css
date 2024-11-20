@@ -11,3 +11,9 @@
 :root {
   --font-sans-serif: "nimbus_sans_lregular", sans-serif;
 }
+
+/*Components
+ */
+figcaption {
+  line-height: 2rem;
+}
