@@ -33,9 +33,15 @@
 <body id="top" class="{{ page.header.body_classes|e }}">
 
 {% block header %}
-  {# TODO: add header #}
-  <header>
-    <a href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+  <header class="container position-fixed pb-2 pt-2 top-0 start-0 w-100 z-index-1">
+    <div class="row">
+      <div class="col-16 d-flex justify-content-between pe-8 ps-8">
+        <a class="d-block fs-1 letter-spacing-lg lh-1 primary text-decoration-none text-uppercase" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+        <div class="fs-1 letter-spacing-lg lh-1 text-uppercase">
+          Photo
+        </div>
+      </div>
+    </div>
 
     {# 
       {% block header_navigation %}
@@ -48,7 +54,9 @@
 {% endblock %}
 
 {% block body %}
-  {% block content %}{% endblock %}
+  <main class="pt-8">
+    {% block content %}{% endblock %}
+  </main>
 {% endblock %}
 
 {% block footer %}
