@@ -4,7 +4,8 @@
   "description": "The **Grav Theme Martonlente Photo** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-compile": "sass --no-source-map scss:css-compiled"
   },
   "author": "",
   "license": "ISC",
