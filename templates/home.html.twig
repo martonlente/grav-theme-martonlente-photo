@@ -4,30 +4,22 @@
 {% block content %}
   <div class="container pe-4 ps-4">
     <ul class="js-isotope-grid list-style-none">
-      <li class="js-isotope-grid-item mb-8 col-{{ random(2, 8) }}">
-        <figure>
-          <img class="d-block w-100" src="https://picsum.photos/1920/1080?random=1">
-          <figcaption>
-            <span class="grey-50 text-nowrap">2024. 01. 01.</span> – <span class="text-nowrap">Caption</span> –  <span class="text-nowrap">Location</span>
-          </figcaption>
-        </figure>
-      </li>
-      <li class="js-isotope-grid-item mb-8 col-{{ random(2, 8) }}">
-        <figure>
-          <img class="d-block w-100" src="https://picsum.photos/1920/1080?random=1">
-          <figcaption>
-            <span class="grey-50 text-nowrap">2024. 01. 01.</span> – <span class="text-nowrap">Caption</span> –  <span class="text-nowrap">Location</span>
-          </figcaption>
-        </figure>
-      </li>
-      <li class="js-isotope-grid-item mb-8 col-{{ random(2, 8) }}">
-        <figure>
-          <img class="d-block w-100" src="https://picsum.photos/1920/1080?random=1">
-          <figcaption>
-            <span class="grey-50 text-nowrap">2024. 01. 01.</span> – <span class="text-nowrap">Caption</span> –  <span class="text-nowrap">Location</span>
-          </figcaption>
-        </figure>
-      </li>
+      {% for img in page.media.images %}
+        <li class="js-isotope-grid-item mb-8 col-{{ random(2, 8) }}">
+          <figure>
+            <img alt="alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block w-100" src="{{ img.url|e }}">
+
+            {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
+              {% set date_txt = image.meta.date %}
+              {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
+
+              <figcaption>
+                <span class="grey-50 text-nowrap">{{ img.meta.alt_txt|e }}</span> – <span class="text-nowrap">{{ img.meta.alt_txt|e }}</span> –  <span class="text-nowrap">{{ img.meta.location|e }}</span>
+              </figcaption>
+            {% endif %}
+          </figure>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 {% endblock %}
