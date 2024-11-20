@@ -10,6 +10,7 @@
             <img alt="alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block w-100" src="{{ img.url|e }}">
 
             {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
+              {# TODO: check image.meta.date to img.meta.date conversion issues #}
               {% set date_txt = image.meta.date %}
               {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
 
