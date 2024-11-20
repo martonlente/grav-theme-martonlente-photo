@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css-compile": "sass --no-source-map scss:css-compiled"
+    "css": "npm-run-all css-compile css-prefix",
+    "css-compile": "sass --no-source-map scss:css-compiled",
+    "css-prefix": "postcss css-compiled/*.css --use autoprefixer --no-map -d css-compiled/",
+    "watch": "nodemon --exec \"npm run css\" --ext scss --watch scss"
   },
   "author": "",
   "license": "ISC",
