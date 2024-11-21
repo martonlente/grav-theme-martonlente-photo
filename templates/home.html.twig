@@ -15,23 +15,23 @@
   <section class="container">
     <ul class="js-isotope-grid list-style-none">
       {% for img in page.media.images %}
-      <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
-        <figure>
-          <img alt="alt=" {% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100"
-            src="{{ img.url|e }}">
+        <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
+          <figure>
+            <img alt="alt=" {% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100"
+              src="{{ img.url|e }}">
 
-          {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
-          {# TODO: fix date_formatted value #}
-          {% set date_txt = img.meta.date %}
-          {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
+            {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
+              {# TODO: fix date_formatted value #}
+              {% set date_txt = img.meta.date %}
+              {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
 
-          <figcaption class="fs-7 mt-1">
-            <span class="grey-50 text-nowrap">{{ date_formatted }} –</span> <span class="text-nowrap">{{
-              img.meta.alt_txt|e }} –</span> <span class="text-nowrap">{{ img.meta.location|e }}</span>
-          </figcaption>
-          {% endif %}
-        </figure>
-      </li>
+              <figcaption class="fs-7 mt-1">
+                <span class="grey-50 text-nowrap">{{ date_formatted }} –</span> <span class="text-nowrap">{{
+                  img.meta.alt_txt|e }} –</span> <span class="text-nowrap">{{ img.meta.location|e }}</span>
+              </figcaption>
+            {% endif %}
+          </figure>
+        </li>
       {% endfor %}
     </ul>
   </section>
