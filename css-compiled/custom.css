@@ -20,6 +20,14 @@
 
 /*Components
  */
+.content a {
+  color: inherit;
+}
+.content strong {
+  color: var(--grey-50);
+  font-weight: normal;
+}
+
 figcaption {
   line-height: 2rem;
 }
