@@ -21,8 +21,8 @@
             src="{{ img.url|e }}">
 
           {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
-          {# TODO: check image.meta.date to img.meta.date conversion issues #}
-          {% set date_txt = image.meta.date %}
+          {# TODO: fix date_formatted value #}
+          {% set date_txt = img.meta.date %}
           {% set date_formatted = date(date_txt|e)|date('Y. m. d.') %}
 
           <figcaption class="fs-7 mt-1">
