@@ -29,8 +29,7 @@
               {% set date_formatted = date_year ~ '. ' ~ date_month ~ '. ' ~ date_day ~ '.' %}
               
               <figcaption class="fs-7 mt-1">
-                <span class="grey-50 text-nowrap">{{ date_formatted }} –</span> <span class="text-nowrap">{{
-                  img.meta.alt_txt|e }} –</span> <span class="text-nowrap">{{ img.meta.location|e }}</span>
+                <span class="grey-50">{{ date_formatted }}</span> – {{ img.meta.alt_txt|e }} – {{ img.meta.location|e }}
               </figcaption>
             {% endif %}
           </figure>
