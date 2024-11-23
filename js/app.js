@@ -1,31 +1,37 @@
 (function() {
   function imgsLoaded(container, callback) {
     var imgs = container.getElementsByTagName('img');
-    var loadedImgsCount = 0;
-    var totalImgsCount = imgs.length;
-
-    if (totalImgsCount == 0) {
+    var imgsCountLoaded = 0;
+    var imgsCountTotal = imgs.length;
+  
+    // If there are no imgs, execute callback and return
+    if (imgsCountTotal == 0) {
       callback();
 
       return;
     }
-
-    for (var i = 0; i < totalImgsCount; i++) {
+  
+    // Loop through all imgs
+    for (var i = 0; i < imgsCountTotal; i++) {
       var img = imgs[i];
-
-      img.addEventListener('load', checkImage);
+  
+      // Add event to handle img load error
       img.addEventListener('error', checkImage);
+  
+      // Add event to handle img load success
+      img.addEventListener('load', checkImage);
     }
-
+  
     function checkImage() {
-      loadedImgsCount++;
-
-      if (loadedImgsCount == totalImgsCount) {
+      imgsCountLoaded++;
+  
+      // If all imgs have been processed, execute callback
+      if (imgsCountLoaded == imgsCountTotal) {
         callback();
       }
     }
   }
-
+  
   function isotopeGrid() {
     var isotopeGrid = document.querySelector('.js-isotope-grid');
 
