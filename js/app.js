@@ -37,7 +37,10 @@
 
     var iso = new Isotope(isotopeGrid, {
       itemSelector: '.js-isotope-grid-item',
-      layoutMode: 'masonry'
+      layoutMode: 'masonry',
+      masonry: {
+        columnWidth: '.col-4' // 'col-{random}' smallest
+      }
     });  
   }
 
