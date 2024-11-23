@@ -22,7 +22,8 @@
 
 {% block javascripts %}
   {% do assets.addJs('theme://node_modules/isotope-layout/dist/isotope.pkgd.min.js', 100) %}
-  {% do assets.addJs('theme://js/app.js', 99) %}
+  {% do assets.addJs('theme://node_modules/isotope-packery/packery-mode.pkgd.min.js', 99) %}
+  {% do assets.addJs('theme://js/app.js', 98) %}
 {% endblock %}
 
 {% block assets deferred %}
