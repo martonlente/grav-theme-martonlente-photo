@@ -13,6 +13,12 @@
     </div>
   </section>
   <section class="container">
+    <div class="mb-8 row">
+      <div class="col-16 d-flex justify-content-end">
+        <button class="bg-transparent border-0 fs-6 js-btn-change-layout">Change layout</button>
+      </div>
+    </div>
+    {# TODO: add screen loading #}
     <ul class="js-isotope-grid list-style-none">
       {% for img in page.media.images %}
         <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">

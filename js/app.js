@@ -1,4 +1,31 @@
 (function() {
+  function changeLayout(container) {
+    var btnChangeLayout = document.querySelector('.js-btn-change-layout');
+
+    btnChangeLayout.addEventListener('click', function() {
+      var urlCurrent = window.location.href; // Get URL current
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', urlCurrent, true); // Use URL current as endpoint
+  
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(xhr.responseText, 'text/html');
+            var contentNew = doc.querySelector('.js-isotope-grid').innerHTML;
+
+            container.innerHTML = contentNew; // Update container's innerHTML directly
+          } else {
+            // TODO: add error handling
+          }
+        }
+      };
+  
+      xhr.send();
+    });
+  }
+
   function imgsLoaded(container, callback) {
     var imgs = container.getElementsByTagName('img');
     var imgsCountLoaded = 0;
@@ -47,6 +74,9 @@
   function init() {
     // TODO: check variable naming
     var isotopeGridHelper = document.querySelector('.js-isotope-grid');
+
+    // TODO: fix reinit after changeLayout
+    changeLayout(isotopeGridHelper);
 
     imgsLoaded(isotopeGridHelper, function() {
       isotopeGrid();
