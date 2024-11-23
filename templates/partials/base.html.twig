@@ -31,8 +31,8 @@
   {{ assets.js()|raw }}
 {% endblock %}
 </head>
-<body id="top" class="{{ page.header.body_classes|e }}">
-
+{# Colour secondary base: 'hsl(250, 100%, 45%)' #}
+<body id="top" class="{{ page.header.body_classes|e }}" style="background-color: hsl({{ random(0, 359) }}, 100%, 95%);">
 {% block header %}
   {# TODO: check class 'container' position #}
   {# TODO: add style from lg #}
