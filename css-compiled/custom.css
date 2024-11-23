@@ -4,6 +4,7 @@
   --container-max-width: 192.0rem;
   --grid-columns: 16;
   --grid-gutter-width: calc(var(--spacer) * 4);
+  --lh-base: 1.5;
   --lh-lg: calc(var(--spacer) * 6);
 }
 

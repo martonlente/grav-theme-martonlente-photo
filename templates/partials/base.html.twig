@@ -34,10 +34,11 @@
 
 {% block header %}
   {# TODO: check class 'container' position #}
+  {# TODO: add style from lg #}
   <header class="container position-fixed pt-2 top-0 start-0 w-100 z-index-1">
     <div class="row">
-      <div class="col-16 d-flex justify-content-between">
-        <a class="d-block fs-3 letter-spacing-lg lh-1 primary text-decoration-none text-uppercase" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+      <div class="col-16 d-flex flex-wrap justify-content-between">
+        <a class="d-block fs-3 letter-spacing-lg lh-1 me-8 primary text-decoration-none text-uppercase" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
         <div class="fs-3 grey-50 letter-spacing-lg lh-1 text-uppercase">
           {{ page.title|e }}
         </div>
@@ -63,12 +64,12 @@
 {% block footer %}
   <footer class="container pb-2">
     <div class="row">
-      <div class="col-16 d-flex justify-content-between">
-        <div>
-          Open source: <a class="primary" href="#" target="_blank">grav-theme-martonlente-photo</a>
+      <div class="col-16 d-flex flex-wrap justify-content-between">
+        <div class="me-8">
+           UX/UI design & development – <a class="primary" href="https://martonlente.com" target="_blank">Márton Lente</a>
         </div>
         <div>
-          Copyright © 2024 Márton Lente
+          Copyright © 2024 Márton Lente – <a class="primary" href="https://github.com/martonlente/grav-theme-martonlente-photo" target="_blank">grav-theme-martonlente-photo</a> is available open-source
         </div>
       </div>
     </div>
