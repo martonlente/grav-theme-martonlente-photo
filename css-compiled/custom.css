@@ -21,6 +21,10 @@
 
 /*Components
  */
+*:not(header):not(header *) {
+  background-color: inherit;
+}
+
 .content a {
   color: inherit;
 }

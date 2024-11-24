@@ -67,6 +67,10 @@
   
   function isotopeGrid() {
     var isotopeGrid = document.querySelector('.js-isotope-grid');
+    var isotopeGridHelperIsLoading = document.querySelector('.js-isotope-grid-helper-is-loading');
+
+    // Hide isotopeGridHelperIsLoading
+    isotopeGridHelperIsLoading.classList.add('d-none');
 
     var iso = new Isotope(isotopeGrid, {
       itemSelector: '.js-isotope-grid-item',
