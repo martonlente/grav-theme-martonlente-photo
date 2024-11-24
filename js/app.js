@@ -4,9 +4,10 @@
 
     btnChangeLayout.addEventListener('click', function() {
       var urlCurrent = window.location.href; // Get URL current
+      var paramRandom = '?random=' + Math.random(); // Add parameter random to URL
       var xhr = new XMLHttpRequest();
 
-      xhr.open('GET', urlCurrent, true); // Use URL current as endpoint
+      xhr.open('GET', urlCurrent + paramRandom, true); // Use URL current with random parameter as endpoint
   
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
@@ -16,6 +17,11 @@
             var contentNew = doc.querySelector('.js-isotope-grid').innerHTML;
 
             container.innerHTML = contentNew; // Update container's innerHTML directly
+
+            // Reinit isotope
+            imgsLoaded(container, function() {
+              isotopeGrid();
+            });
           } else {
             // TODO: add error handling
           }
@@ -75,7 +81,6 @@
     // TODO: check variable naming
     var isotopeGridHelper = document.querySelector('.js-isotope-grid');
 
-    // TODO: fix reinit after changeLayout
     changeLayout(isotopeGridHelper);
 
     imgsLoaded(isotopeGridHelper, function() {
