@@ -21,11 +21,17 @@
     <div class="position-relative">
       <ul class="js-isotope-grid list-style-none">
         {% for img in page.media.images %}
+          {% if img.width > 1856 %}
+            {% set src_optimized = img.resize(1856).url|e %}
+          {% else %}
+            {% set src_optimized = img.url|e %}
+          {% endif %}
+ 
           <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
             <figure>
               {# TODO: check #}
               {# Resize img if width is larger than double display width #}
-              <img alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100" src="{% if img.width > 1856 %}{{ img.resize(1856).url|e }}{% else %}{{ img.url|e }}{% endif %}">
+              <img alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100" src="{{ src_optimized }}">
   
               {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
                 {% set date_txt = img.meta.date %}
