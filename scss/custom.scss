@@ -42,3 +42,14 @@
 figcaption {
   line-height: 2.0rem;
 }
+
+.isotope-grid-item {
+  transition: opacity var(--transition-duration);
+
+  &:active,
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}

@@ -27,11 +27,11 @@
             {% set src_optimized = img.url|e %}
           {% endif %}
  
-          <li class="js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
+          <li class="isotope-grid-item js-isotope-grid-item mb-8 col-{{ random(4, 8) }}">
             <figure>
               {# TODO: check #}
               {# Resize img if width is larger than double display width #}
-              <img alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block mb-0 w-100" src="{{ src_optimized }}">
+              <img alt="{% if img.meta.alt_txt %}{{ img.meta.alt_txt|e }}{% endif %}" class="d-block js-img-gallery-item-img mb-0 w-100" src="{{ src_optimized }}">
   
               {% if img.meta.alt_txt and img.meta.date and img.meta.location %}
                 {% set date_txt = img.meta.date %}
@@ -59,4 +59,14 @@
       </div>
     </div>
   </section>
+  <div class="align-items-center bg-white container d-none js-img-gallery pb-8 position-fixed start-0 pt-8 top-0 vh-100 w-100">
+    <div class="h-100 row">
+      <div class="col-16 d-flex h-100 justify-content-center">
+        <img class="d-block js-img-gallery-item-img-single mb-0 mh-100 mw-100 object-fit-contain" src="https://picsum.photos/1920/1080">
+      </div>
+    </div>
+    <button class="border-0 end-2 fs-3 js-img-gallery-btn-close lh-1 position-absolute top-2">X</button>
+    <button class="border-0 fs-3 js-img-gallery-btn-prev lh-1 position-absolute start-2"><</button>
+    <button class="border-0 end-2 fs-3 js-img-gallery-btn-next lh-1 position-absolute">></button>
+  </div>
 {% endblock %}

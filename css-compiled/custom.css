@@ -36,3 +36,11 @@
 figcaption {
   line-height: 2rem;
 }
+
+.isotope-grid-item {
+  transition: opacity var(--transition-duration);
+}
+.isotope-grid-item:active, .isotope-grid-item:focus, .isotope-grid-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
