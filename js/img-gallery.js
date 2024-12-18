@@ -7,6 +7,7 @@
 
       const imgGallery = document.querySelector('.js-img-gallery');
       const imgGalleryItemImg = document.querySelectorAll('.js-img-gallery-item-img');
+      const imgGalleryItemImgCount = imgGalleryItemImg.length;
       const imgGalleryItemTxtContent = document.querySelectorAll('.js-img-gallery-item-txt-content');
       const imgGalleryItemTxtDate = document.querySelectorAll('.js-img-gallery-item-txt-date');
       const imgGalleryItemSingleImg = document.querySelector('.js-img-gallery-item-single-img');
@@ -23,30 +24,30 @@
       function openImgGallery(index) {
         indexCurrent = index;
 
-        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
-        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
-        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
-        
+        updateImgGalleryItemSingle(indexCurrent);
+
         imgGallery.classList.add('d-flex');
         imgGallery.classList.remove('d-none');
       }
   
       function showNext() {
-        indexCurrent = (indexCurrent + 1) % imgGalleryItemImg.length;
+        indexCurrent = (indexCurrent + 1) % imgGalleryItemImgCount;
 
-        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
-        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
-        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
+        updateImgGalleryItemSingle(indexCurrent);
       }
-  
+      
       function showPrev() {
-        indexCurrent = (indexCurrent - 1 + imgGalleryItemImg.length) % imgGalleryItemImg.length;
-
-        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
-        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
-        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
+        indexCurrent = (indexCurrent - 1 + imgGalleryItemImgCount) % imgGalleryItemImgCount;
+        
+        updateImgGalleryItemSingle(indexCurrent);
       }
-  
+ 
+      function updateImgGalleryItemSingle(index) {
+        imgGalleryItemSingleImg.src = imgGalleryItemImg[index].src;
+        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[index].innerText;
+        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[index].innerText;
+      }
+
       imgGalleryItemImg.forEach((item, index) => {
         item.addEventListener('click', () => openImgGallery(index));
       });
