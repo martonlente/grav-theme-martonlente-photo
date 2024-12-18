@@ -6,6 +6,9 @@
       const btnPrev = document.querySelector('.js-img-gallery-btn-prev');
 
       const imgGallery = document.querySelector('.js-img-gallery');
+      const imgGalleryHelper = document.querySelector('.js-img-gallery-helper');
+      const imgGalleryElements = [imgGallery, imgGalleryHelper];
+  
       const imgGalleryItemImg = document.querySelectorAll('.js-img-gallery-item-img');
       const imgGalleryItemImgCount = imgGalleryItemImg.length;
       const imgGalleryItemTxtContent = document.querySelectorAll('.js-img-gallery-item-txt-content');
@@ -18,6 +21,11 @@
   
       function closeImgGallery() {
         imgGallery.classList.add('d-none');
+
+        imgGalleryElements.forEach(function(item) {
+          item.classList.add('d-none');
+        });
+
         imgGallery.classList.remove('d-flex');
       }
   
@@ -26,8 +34,11 @@
 
         updateImgGalleryItemSingle(indexCurrent);
 
+        imgGalleryElements.forEach(function(item) {
+          item.classList.remove('d-none');
+        });
+
         imgGallery.classList.add('d-flex');
-        imgGallery.classList.remove('d-none');
       }
   
       function showNext() {

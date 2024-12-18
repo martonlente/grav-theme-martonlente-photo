@@ -69,11 +69,13 @@
         </div>
       </div>
     </div>
-    {# TODO: fix z-index #}
-    <div class="position-absolute pt-2 start-0 top-0 text-center w-100 z-index-1">
-      <button class="border-0 fs-3 h-3 js-img-gallery-btn-close lh-1">X</button>
-    </div>
     <button class="border-0 fs-3 h-3 js-img-gallery-btn-prev lh-1 position-absolute start-2"><</button>
     <button class="border-0 end-2 fs-3 h-3 js-img-gallery-btn-next lh-1 position-absolute">></button>
+  </div>
+  {% endblock %}
+  
+{% block img_gallery_helper %}
+  <div class="d-none js-img-gallery-helper">
+    <button class="bg-transparent border-0 fs-3 h-3 js-img-gallery-btn-close lh-1">X</button>
   </div>
 {% endblock %}
