@@ -7,7 +7,11 @@
 
       const imgGallery = document.querySelector('.js-img-gallery');
       const imgGalleryItemImg = document.querySelectorAll('.js-img-gallery-item-img');
-      const imgGalleryItemImgSingle = document.querySelector('.js-img-gallery-item-img-single');
+      const imgGalleryItemTxtContent = document.querySelectorAll('.js-img-gallery-item-txt-content');
+      const imgGalleryItemTxtDate = document.querySelectorAll('.js-img-gallery-item-txt-date');
+      const imgGalleryItemSingleImg = document.querySelector('.js-img-gallery-item-single-img');
+      const imgGalleryItemSingleTxtContent = document.querySelector('.js-img-gallery-item-single-txt-content');
+      const imgGalleryItemSingleTxtDate = document.querySelector('.js-img-gallery-item-single-txt-date');
 
       let indexCurrent = 0;
   
@@ -18,19 +22,29 @@
   
       function openImgGallery(index) {
         indexCurrent = index;
-        imgGalleryItemImgSingle.src = imgGalleryItemImg[indexCurrent].src;
+
+        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
+        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
+        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
+        
         imgGallery.classList.add('d-flex');
         imgGallery.classList.remove('d-none');
       }
   
       function showNext() {
         indexCurrent = (indexCurrent + 1) % imgGalleryItemImg.length;
-        imgGalleryItemImgSingle.src = imgGalleryItemImg[indexCurrent].src;
+
+        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
+        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
+        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
       }
   
       function showPrev() {
         indexCurrent = (indexCurrent - 1 + imgGalleryItemImg.length) % imgGalleryItemImg.length;
-        imgGalleryItemImgSingle.src = imgGalleryItemImg[indexCurrent].src;
+
+        imgGalleryItemSingleImg.src = imgGalleryItemImg[indexCurrent].src;
+        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[indexCurrent].innerText;
+        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[indexCurrent].innerText;
       }
   
       imgGalleryItemImg.forEach((item, index) => {

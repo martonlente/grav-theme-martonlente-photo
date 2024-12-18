@@ -43,7 +43,7 @@
                 {% set date_formatted = date_year ~ '. ' ~ date_month ~ '. ' ~ date_day ~ '.' %}
                 
                 <figcaption class="fs-7 mt-1">
-                  <span class="grey-50">{{ date_formatted }}</span> – {{ img.meta.alt_txt|e }} – {{ img.meta.location|e }}
+                  <span class="grey-50 js-img-gallery-item-txt-date">{{ date_formatted }}</span> – <span class="js-img-gallery-item-txt-content">{{ img.meta.alt_txt|e }} – {{ img.meta.location|e }}</span>
                 </figcaption>
               {% endif %}
             </figure>
@@ -61,8 +61,12 @@
   </section>
   <div class="align-items-center bg-white container d-none js-img-gallery pb-8 position-fixed start-0 pt-8 top-0 vh-100 w-100">
     <div class="h-100 row">
-      <div class="col-16 d-flex h-100 justify-content-center">
-        <img class="d-block js-img-gallery-item-img-single mb-0 mh-100 mw-100 object-fit-contain" src="https://picsum.photos/1920/1080">
+      {# TODO: check justify content end for imgs short #}
+      <div class="align-items-center col-16 d-flex flex-column h-100 justify-content-end">
+        <img class="d-block js-img-gallery-item-single-img mb-0 mh-100 mw-100 object-fit-contain" src="https://picsum.photos/1920/1080">
+        <div class="position-absolute translate-top-4">
+          <span class="grey-50 js-img-gallery-item-single-txt-date">2024. 02. 03.</span> – <span class="js-img-gallery-item-single-txt-content">IJ-Tower Block by Neutelings Riedijk 1 – Amsterdam, Netherlands</span>
+        </div>
       </div>
     </div>
     <button class="border-0 end-2 fs-3 js-img-gallery-btn-close lh-1 position-absolute top-2">X</button>
