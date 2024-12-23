@@ -1,10 +1,11 @@
-(function() {
-  function imgGallery() {
-    function init() {
+// TODO: check and refactor js imgGallery
+const imgGallery = (function() {
+  return {
+    init: function() {
       const btnClose = document.querySelector('.js-img-gallery-btn-close');
       const btnNext = document.querySelector('.js-img-gallery-btn-next');
       const btnPrev = document.querySelector('.js-img-gallery-btn-prev');
-
+  
       const imgGallery = document.querySelector('.js-img-gallery');
       const imgGalleryHelper = document.querySelector('.js-img-gallery-helper');
       const imgGalleryElements = [imgGallery, imgGalleryHelper];
@@ -16,34 +17,34 @@
       const imgGalleryItemSingleImg = document.querySelector('.js-img-gallery-item-single-img');
       const imgGalleryItemSingleTxtContent = document.querySelector('.js-img-gallery-item-single-txt-content');
       const imgGalleryItemSingleTxtDate = document.querySelector('.js-img-gallery-item-single-txt-date');
-
+  
       let indexCurrent = 0;
   
       function closeImgGallery() {
         imgGallery.classList.add('d-none');
-
+  
         imgGalleryElements.forEach(function(item) {
           item.classList.add('d-none');
         });
-
+  
         imgGallery.classList.remove('d-flex');
       }
   
       function openImgGallery(index) {
         indexCurrent = index;
-
+  
         updateImgGalleryItemSingle(indexCurrent);
-
+  
         imgGalleryElements.forEach(function(item) {
           item.classList.remove('d-none');
         });
-
+  
         imgGallery.classList.add('d-flex');
       }
   
       function showNext() {
         indexCurrent = (indexCurrent + 1) % imgGalleryItemImgCount;
-
+  
         updateImgGalleryItemSingle(indexCurrent);
       }
       
@@ -52,13 +53,13 @@
         
         updateImgGalleryItemSingle(indexCurrent);
       }
- 
+  
       function updateImgGalleryItemSingle(index) {
         imgGalleryItemSingleImg.src = imgGalleryItemImg[index].src;
         imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[index].innerText;
         imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[index].innerText;
       }
-
+  
       imgGalleryItemImg.forEach((item, index) => {
         item.addEventListener('click', () => openImgGallery(index));
       });
@@ -76,13 +77,6 @@
           showPrev();
         }
       });
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-      init();
-    });
-  }
-
-  // TODO: move function call
-  imgGallery();
+    }
+  };
 })();

@@ -93,6 +93,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    imgGallery.init();
     init();
   });
 })();
