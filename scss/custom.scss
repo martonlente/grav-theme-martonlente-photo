@@ -28,6 +28,10 @@
   background-color: inherit;
 }
 
+body {
+  transition: background-color var(--transition-duration);
+}
+
 .content {
   a {
     color: inherit;

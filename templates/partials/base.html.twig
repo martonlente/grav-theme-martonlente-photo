@@ -34,7 +34,7 @@
 </head>
 {# Colour secondary base: 'hsl(250, 100%, 45%)' #}
 {# TODO: consider making body bg colour dynamic by intervals #}
-<body id="top" class="{{ page.header.body_classes|e }}" style="background-color: hsl({{ random(0, 359) }}, 100%, 95%);">
+<body id="top" class="body js-body {{ page.header.body_classes|e }}" style="background-color: hsl({{ random(0, 359) }}, 100%, 95%);">
 {% block header %}
   {# TODO: check class 'container' position #}
   {# TODO: add style from lg #}

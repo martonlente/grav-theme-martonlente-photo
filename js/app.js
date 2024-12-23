@@ -1,4 +1,16 @@
 (function() {
+  function setBodyBgColorRandom(interval) {
+    function init() {
+      const body = document.querySelector('.js-body');
+
+      const bodyBgColorHueRandom = Math.floor(Math.random() * 360); // Colour secondary base: 'hsl(250, 100%, 45%)'
+  
+      body.style.backgroundColor = `hsl(${bodyBgColorHueRandom}, 100%, 95%)`;
+    }
+  
+    setInterval(init, interval);
+  }
+  
   function changeLayout(container) {
     var btnChangeLayout = document.querySelector('.js-btn-change-layout');
 
@@ -90,6 +102,8 @@
     imgsLoaded(isotopeGridHelper, function() {
       isotopeGrid();
     });
+
+    setBodyBgColorRandom(8000);
   }
 
   document.addEventListener('DOMContentLoaded', function() {
