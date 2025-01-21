@@ -19,6 +19,15 @@
   --font-sans-serif: "nimbus_sans_lregular", sans-serif;
 }
 
+a,
+button:hover {
+  opacity: 0.8;
+}
+
+button {
+  transition: opacity var(--transition-duration);
+}
+
 /*Components
  */
 *:not(header):not(header *) {
