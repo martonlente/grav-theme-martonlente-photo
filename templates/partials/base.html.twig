@@ -40,12 +40,14 @@
   {# TODO: add style from lg #}
   <header class="container position-fixed pt-2 top-0 start-0 w-100 z-index-1">
     <div class="row">
-      <div class="col-16 d-flex flex-wrap justify-content-between">
+      <div class="col-6 col-8-sm">
         <a class="d-block fs-3 letter-spacing-lg lh-1 primary text-decoration-none text-uppercase" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
-
+      </div>
+      <div class="col-4 d-none-sm">
         {% block img_gallery_helper %}{% endblock %}
-        
-        <div class="fs-3 grey-50 letter-spacing-lg lh-1 text-uppercase">
+      </div>
+      <div class="col-6 col-8-sm">
+        <div class="fs-3 grey-50 letter-spacing-lg lh-1 text-end text-uppercase">
           Year {{ page.title|e }}
         </div>
       </div>
