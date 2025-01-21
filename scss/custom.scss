@@ -17,6 +17,20 @@
   padding-right: calc(var(--spacer) * 4);
 }
 
+@media (max-width: 600px) {
+  :root {
+    --grid-gutter-width: calc(var(--spacer) * 2);
+
+  // TODO: check variables lh-* xs
+    --lh-lg: calc(var(--spacer) * 5);
+  }
+  
+  .container {
+    padding-left: calc(var(--spacer) * 2);
+    padding-right: calc(var(--spacer) * 2);
+  }  
+}
+
 /*Type
  */
  :root {
