@@ -61,8 +61,11 @@ const imgGallery = (function() {
       }
 
       imgGalleryItemImg.forEach(function(item, index) {
-        item.addEventListener('click', function() { 
-          openImgGallery(index); 
+        item.addEventListener('click', function() {
+          // Check if window is bigger than xs
+          if (window.innerWidth > 600) { 
+            openImgGallery(index); 
+          } 
         }); 
       });
 
