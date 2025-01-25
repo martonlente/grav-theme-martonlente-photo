@@ -59,11 +59,13 @@ const imgGallery = (function() {
         imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[index].innerText;
         imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[index].innerText;
       }
-  
-      imgGalleryItemImg.forEach((item, index) => {
-        item.addEventListener('click', () => openImgGallery(index));
+
+      imgGalleryItemImg.forEach(function(item, index) {
+        item.addEventListener('click', function() { 
+          openImgGallery(index); 
+        }); 
       });
-  
+
       btnClose.addEventListener('click', closeImgGallery);
       btnNext.addEventListener('click', showNext);
       btnPrev.addEventListener('click', showPrev);
