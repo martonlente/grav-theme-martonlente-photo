@@ -14,17 +14,17 @@
 {% endblock head %}
 
 {% block stylesheets %}
-  {% do assets.addCss('theme://node_modules/reset-css/reset.css', 100) %}
-  {% do assets.addCss('theme://baseutil-css/build/baseutil.css', 99) %}
-  {% do assets.addCss('theme://fonts/nimbus-sans-l-fontfacekit/web fonts/nimbussansl_regular_macroman/stylesheet.css', 98) %}
-  {% do assets.addCss('theme://css-compiled/custom.css', 97) %}
+  {% do assets.addCss('theme://node_modules/reset-css/reset.css?v=' ~ grav.theme.version, 100) %}
+  {% do assets.addCss('theme://baseutil-css/build/baseutil.css?v=' ~ grav.theme.version, 99) %}
+  {% do assets.addCss('theme://fonts/nimbus-sans-l-fontfacekit/web fonts/nimbussansl_regular_macroman/stylesheet.css?v=' ~ grav.theme.version, 98) %}
+  {% do assets.addCss('theme://css-compiled/custom.css?v=' ~ grav.theme.version, 97) %}
 {% endblock %}
 
 {% block javascripts %}
-  {% do assets.addJs('theme://node_modules/isotope-layout/dist/isotope.pkgd.min.js', 100) %}
-  {% do assets.addJs('theme://node_modules/isotope-packery/packery-mode.pkgd.min.js', 99) %}
-  {% do assets.addJs('theme://js/img-gallery.js', 98) %}
-  {% do assets.addJs('theme://js/app.js', 97) %}
+  {% do assets.addJs('theme://node_modules/isotope-layout/dist/isotope.pkgd.min.js?v=' ~ grav.theme.version, 100) %}
+  {% do assets.addJs('theme://node_modules/isotope-packery/packery-mode.pkgd.min.js?v=' ~ grav.theme.version, 99) %}
+  {% do assets.addJs('theme://js/img-gallery.js?v=' ~ grav.theme.version, 98) %}
+  {% do assets.addJs('theme://js/app.js?v=' ~ grav.theme.version, 97) %}
 {% endblock %}
 
 {% block assets deferred %}
