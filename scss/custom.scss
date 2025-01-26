@@ -82,3 +82,16 @@ figcaption {
     opacity: .8;
   }
 }
+
+// Break site title to multiple lines per breakpoints
+@media (max-width: 960px) {
+  .site-title {
+    max-width: 20ch;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    max-width: 10ch;
+  }
+}

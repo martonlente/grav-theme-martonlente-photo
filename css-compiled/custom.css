@@ -67,3 +67,14 @@ figcaption {
   cursor: pointer;
   opacity: 0.8;
 }
+
+@media (max-width: 960px) {
+  .site-title {
+    max-width: 20ch;
+  }
+}
+@media (max-width: 600px) {
+  .site-title {
+    max-width: 10ch;
+  }
+}
