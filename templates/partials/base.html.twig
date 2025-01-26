@@ -64,7 +64,10 @@
 {% endblock %}
 
 {% block body %}
-  <main class="pt-8">
+  <main>
+    {# Style utilities height offset y content by header height #}
+    <div class="h-8 h-10-sm h-13-xs"></div>
+
     {% block content %}{% endblock %}
   </main>
 {% endblock %}

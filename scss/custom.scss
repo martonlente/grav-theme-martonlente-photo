@@ -95,3 +95,17 @@ figcaption {
     max-width: 10ch;
   }
 }
+
+/*Utilities
+ */
+@media (max-width: 960px) {
+  .h-10-sm {
+    height: calc(var(--spacer) * 10);
+  }
+}
+
+@media (max-width: 600px) {
+  .h-13-xs {
+    height: calc(var(--spacer) * 13);
+  }
+}
