@@ -2,21 +2,22 @@ name: Grav Theme Martonlente Photo
 slug: grav-theme-martonlente-photo
 type: theme
 version: 1.0.0-beta.1
-description: My New Theme
+description: Grav theme for my personal photo archive
 icon: rebel
 author:
   name: Márton Lente
-  email: lentemarton@gmail.com
-homepage: https://github.com/martonlente/grav-theme-grav-theme-martonlente-photo
-demo: http://demo.yoursite.com
-keywords: grav, theme, etc
-bugs: https://github.com/martonlente/grav-theme-grav-theme-martonlente-photo/issues
-readme: https://github.com/martonlente/grav-theme-grav-theme-martonlente-photo/blob/develop/README.md
-license: MIT
+  email: contact@martonlente.com
+homepage: https://github.com/martonlente/grav-theme-martonlente-photo
+demo: https://photo.martonlente.com
+keywords: grav, theme, photo
+bugs: https://github.com/martonlente/grav-theme-martonlente-photo/issues
+readme: https://github.com/martonlente/grav-theme-martonlente-photo/blob/main/README.md
+license: Apache 2.0
 
 dependencies:
   - { name: grav, version: '>=1.6.0' }
 
+# TODO: check if needed
 form:
   validation: loose
   fields:
