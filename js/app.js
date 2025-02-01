@@ -31,9 +31,10 @@
 
             container.innerHTML = contentNew; // Update container's innerHTML directly
 
-            // Reinit isotope
+            // Reinit isotope and imgGallery
             imgsLoaded(container, function() {
               isotopeGrid();
+              imgGallery.init();
             });
           } else {
             // TODO: add error handling
