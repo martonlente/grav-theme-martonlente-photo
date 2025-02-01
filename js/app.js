@@ -21,10 +21,11 @@
 
       xhr.open('GET', urlCurrent + paramRandom, true); // Use URL current with random parameter as endpoint
   
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
+      xhr.addEventListener('readystatechange', function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
             var parser = new DOMParser();
+            
             var doc = parser.parseFromString(xhr.responseText, 'text/html');
             var contentNew = doc.querySelector('.js-isotope-grid').innerHTML;
 
@@ -38,8 +39,8 @@
             // TODO: add error handling
           }
         }
-      };
-  
+      });
+
       xhr.send();
     });
   }
