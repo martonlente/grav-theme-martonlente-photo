@@ -20,7 +20,7 @@
     </div>
     <div class="position-relative">
       <ul class="js-isotope-grid list-style-none">
-        {% for img in page.media.images|reverse %}
+        {% for img in page.media.images %}
           {% if img.width > 1856 %}
             {% set src_optimized = img.resize(1856).url|e %}
           {% else %}
