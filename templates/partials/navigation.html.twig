@@ -2,5 +2,5 @@
   {% set current_page = (page.active or page.activeChild) ? 'primary' : 'grey-50' %}
 
   {# TODO: add style nav items xs #}
-  <a class="text-decoration-none {{ current_page|e }}" href="{{ page.url|e }}">{{ page.menu|e }} </a>
+  <a class="text-decoration-none {{ current_page|e }}" href="{{ page.url|e }}">’{{ page.menu|slice(-2)|e }} </a>
 {% endfor %}
