@@ -48,18 +48,16 @@
       </div>
       <div class="col-7 col-7-sm">
         <div class="fs-3 grey-50 letter-spacing-lg lh-1 text-end text-uppercase">
-          Year <br class="d-inline-xs d-none"> — <br class="d-inline-sm d-none"> {{ page.title|e }}
+          Year <br class="d-inline-xs d-none"> — <br class="d-inline-sm d-none">
+
+          {% block header_navigation %}
+            <nav class="d-inline">
+              {% include 'partials/navigation.html.twig' %}
+            </nav>
+          {% endblock %}
         </div>
       </div>
     </div>
-
-    {# 
-      {% block header_navigation %}
-        <nav>
-          {% include 'partials/navigation.html.twig' %}
-        </nav>
-      {% endblock %}
-    #}
   </header>
 {% endblock %}
 
