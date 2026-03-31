@@ -18,6 +18,7 @@ const imgGallery = (function() {
       const imgGalleryItemSingleTxtContent = document.querySelector('.js-img-gallery-item-single-txt-content');
       const imgGalleryItemSingleTxtDate = document.querySelector('.js-img-gallery-item-single-txt-date');
 
+      let imgGalleryItemTxtContentCurrent;
       let indexCurrent = 0;
 
       function closeImgGallery() {
@@ -56,8 +57,14 @@ const imgGallery = (function() {
 
       function updateImgGalleryItemSingle(index) {
         imgGalleryItemSingleImg.src = imgGalleryItemImg[index].src;
-        imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContent[index].innerText;
-        imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[index].innerText;
+        imgGalleryItemTxtContentCurrent = imgGalleryItemTxtContent[index];
+
+        if (imgGalleryItemTxtContentCurrent) {
+          imgGalleryItemSingleTxtContent.innerText = imgGalleryItemTxtContentCurrent.innerText;
+          imgGalleryItemSingleTxtDate.innerText = imgGalleryItemTxtDate[index].innerText;
+        }
+
+        // TODO: consider adding condition else reset texts
       }
 
       imgGalleryItemImg.forEach(function(item, index) {
